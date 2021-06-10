@@ -13,6 +13,7 @@
 <body 
   class="w-full h-screen flex justify-center items-center"
   x-data="{isPopupOpen: false}"
+  @keydown.escape="isPopupOpen= false"
 >
   <button 
     class="py-4 px-8 bg-gray-900 hover:bg-gray-800 text-sm text-white uppercase font-bold rounded-md transition-colors"
