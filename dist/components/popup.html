@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup</title>
+
+  
+
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+<script type="module" crossorigin src="/assets/popup.1ed58857.js"></script>
+  <link rel="stylesheet" href="/assets/tailwind.f33f0668.css">
+</head>
+<body 
+  class="w-full h-screen flex justify-center items-center"
+  x-data="{isPopupOpen: false}"
+  @keydown.escape="isPopupOpen= false"
+>
+  <button 
+    class="py-4 px-8 bg-gray-900 hover:bg-gray-800 text-sm text-white uppercase font-bold rounded-md transition-colors"
+    @click="isPopupOpen = true"
+  >
+    Open Popup
+  </button>
+
+  <div 
+    x-show="isPopupOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="fixed inset-0 flex items-center justify-center px-2 bg-black bg-opacity-50"
+  >
+    <!-- Popup -->
+    <div 
+      x-show.transition="isPopupOpen"
+      @click.away="isPopupOpen = false"
+      class="relative max-w-3xl w-full bg-gray-100"
+    >
+      <button 
+        class="absolute top-0 right-0 transform -translate-y-full flex items-center space-x-1 leading-none text-xs md:text-sm font-bold text-white uppercase focus:outline-none" 
+        type="button"
+        @click="isPopupOpen = false"
+      >
+        <span>Não preciso deste desconto</span>
+        <svg class="w-6 md:w-8 h-6 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="grid md:grid-cols-2">
+        <div class="hidden md:block relative">
+          <img class="absolute inset-0 w-full h-full object-cover" src="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Foto-Mulher-PNG.png" alt="">
+        </div>
+
+        <div class="py-16 md:py-36 px-4 md:pl-0 sm:pr-10">
+          <h2 class="text-gray-700 text-lg font-bold uppercase">
+            Bem-vindo! você ganhou <span class="block text-4xl">10% de desconto</span>
+          </h2>
+ 
+          <p class="text-sm">Cadastre-se para ver o cupom e ficar por dentro das novidades.</p>
+
+          <form class="mt-5">
+            <input 
+              class="px-2 py-3 block w-full rounded-md border border-gray-300 focus:border-gray-400 focus:ring focus:ring-gray-300 focus:ring-opacity-50 focus:outline-none" 
+              type="email" 
+              placeholder="QUAL O SEU EMAIL?"
+            >
+            
+            <div class="mt-5 flex justify-center">
+              <button 
+                class="py-4 px-8 bg-gray-900 hover:bg-gray-800 text-sm text-white uppercase font-bold rounded-md transition-colors" 
+                type="submit"
+              >
+                Garanta seu desconto
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="py-0.5 px-2 text-xs text-white text-center bg-black">
+        Válido para a primeira compra por cpf utilizando o cupom. Não cumulativo com outras promoções.
+      </div>
+    </div>
+  </div>
+
+  <a
+    class="fixed right-5 bottom-5 z-50 inline-flex items-center p-1 text-sm text-white bg-gray-600 rounded-lg" 
+    href="/">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg> 
+    Back to components
+  </a>
+</body>
+</html>
+
