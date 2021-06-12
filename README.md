@@ -1,5 +1,7 @@
 # Tailwind CSS / Alpine Components
 
+[**View the live demo**](https://tailwind-components-hallefsantos.vercel.app/)
+
 To get started:
 
 1. Clone the repository:
