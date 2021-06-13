@@ -8,9 +8,13 @@
 
   
 
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
-<script type="module" crossorigin src="/assets/popup.1ed58857.js"></script>
-  <link rel="stylesheet" href="/assets/tailwind.f33f0668.css">
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+  <style>
+    [x-cloak] { display: none !important}
+  </style>
+<script type="module" crossorigin src="/assets/popup.53c4e1ea.js"></script>
+  <link rel="stylesheet" href="/assets/tailwind.7d8d902b.css">
 </head>
 <body 
   class="w-full h-screen flex justify-center items-center"
@@ -25,6 +29,7 @@
   </button>
 
   <div 
+    class="fixed inset-0 flex items-center justify-center px-2 bg-black bg-opacity-50"
     x-show="isPopupOpen"
     x-transition:enter="transition ease-out duration-300"
     x-transition:enter-start="opacity-0"
@@ -32,7 +37,7 @@
     x-transition:leave="transition ease-in duration-300"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    class="fixed inset-0 flex items-center justify-center px-2 bg-black bg-opacity-50"
+    x-cloak
   >
     <!-- Popup -->
     <div 

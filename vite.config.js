@@ -12,6 +12,7 @@ module.exports = {
             popup: resolve(__dirname, 'src/components/popup.html'),
             select: resolve(__dirname, 'src/components/select.html'),
             passwordVisilibity: resolve(__dirname, 'src/components/password-visibility.html'),
+            navigation: resolve(__dirname, 'src/components/navigation.html'),
          },
       }
    }
